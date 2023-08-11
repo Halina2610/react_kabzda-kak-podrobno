@@ -5,7 +5,7 @@ import {Rating} from "./components/rating/Rating";
 
 /*function Hello() {
     //debugger //останавливает программу и выполняет ее по шагам
-    alert('Hello IT-KAMASUTRA')
+    alert('Hello IT')
 }
 Hello();*/
 

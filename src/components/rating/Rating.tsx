@@ -5,7 +5,7 @@ type RatingPropsType = {
 }
 
 export function Rating(props: RatingPropsType) {
-    console.log("Rating rendering") //команда дословно передает в консоль что и за чем следует и сколько раз отрисовывается
+    console.log("Rating rendering") //команда дословно передает в консоль, что и за чем следует
 
     if (props.value === 1) {
         return (
