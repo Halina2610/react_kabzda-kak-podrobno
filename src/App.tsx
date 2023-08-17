@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Accordion } from './components/accordion/Accordion';
+import {Accordion} from './components/accordion/Accordion';
 import {Rating} from "./components/rating/Rating";
 
 /*function Hello() {
@@ -23,6 +23,7 @@ function App() {
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
+            <Rating value={1}/>
 
         </div>
     );
@@ -31,6 +32,7 @@ function App() {
 type PageTitlePropsType = {
     title: string
 }
+
 function PageTitle(props: PageTitlePropsType) {
     return (
         <h1>{props.title}</h1>
