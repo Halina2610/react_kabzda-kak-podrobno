@@ -20,6 +20,11 @@ export const MethodMap = (props: TopCarsPropsType) => {
                     </tr>
                 )
             })}
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f64c11b (test)
         </table>
     );
 };
