@@ -9,7 +9,7 @@ type AccordionPropsType = {
 export function Accordion(props: AccordionPropsType) {
     console.log("Accordion rendering")
 
-    /*    debugger //останавливает программу и выполняет ее по шагам*/
+     debugger //останавливает программу и выполняет ее по шагам
     if (props.collapsed) {
         return (
             <div>
