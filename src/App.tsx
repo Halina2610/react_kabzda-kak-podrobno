@@ -3,30 +3,16 @@ import './App.css';
 import {Accordion} from './components/accordion/Accordion';
 import {Rating} from "./components/rating/Rating";
 
-/*function Hello() {
-    //debugger //останавливает программу и выполняет ее по шагам
-    alert('Hello IT')
-}
-Hello();*/
 
 function App() {
-//    debugger //останавливает программу и выполняет ее по шагам
     return (
         <div>
-            <PageTitle title={"This is App component"}/>
-            <PageTitle title={"Users"}/>
-            <Accordion title={"List 1"} collapsed={true}/>
-            <Accordion title={"List 2"} collapsed={false}/>
-            <Rating value={0}/>
+            <PageTitle title={'react - kabzda kak podrobno'}/>
+            <Accordion titleValue={"Menu"} collapsed={true}/>
+            <Accordion titleValue={"User"} collapsed={false}/>
             <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={4}/>
-            <Rating value={4}/>
             <Rating value={5}/>
-            <Rating value={1}/>
-
+            <Rating value={3}/>
         </div>
     );
 }
