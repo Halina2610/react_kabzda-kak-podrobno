@@ -8,12 +8,10 @@ type PropsType = {
 export const OnOff = (props: PropsType) => {
     let [on, setOn] = useState(false);
 
-
     const battonsStyle = {
         display: 'flex',
         gap: '10px',
         alignItems: 'center',
-        justifyContent: 'center',
         marginTop: '100px'
     }
     const onStyle = {
