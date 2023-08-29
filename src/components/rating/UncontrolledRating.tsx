@@ -4,12 +4,12 @@ type RatingPropsType = {
     // value: number;
 };
 
-export const Rating = (props: RatingPropsType) => {
-    const [rating, setRating] = useState(0);
+export const UncontrolledRating = (props: RatingPropsType) => {
+    let [rating, setRating] = useState(0);
 
     const handleRatingChange = (value: number) => {
         if (rating === value) {
-            // If the selected star is already active, set the rating to 0
+            // Если выбранная звезда уже активна, установить рейтинг в 0
             setRating(0);
         } else {
             setRating(value);
@@ -35,8 +35,15 @@ type StarPropsType = {
 function Star(props: StarPropsType) {
     console.log("Star rendering");
 
+    const handleClick = () => {
+        if (props.selected) {
+            // Если звезда активна, уменьшить рейтинг на 1
+            props.onClick();
+        }
+    };
+
     if (props.selected) {
-        return <span><b>★</b></span>;
+        return <span onClick={handleClick}>★</span>;
     } else {
         return <span onClick={props.onClick}>☆</span>;
     }
