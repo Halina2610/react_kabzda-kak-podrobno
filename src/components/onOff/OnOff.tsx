@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 type PropsType = {
-    //  on: boolean;
+    value: boolean
+    callback: (value: boolean) => void
 }
 
 
 export const OnOff = (props: PropsType) => {
-    let [on, setOn] = useState(false);
 
-    const battonsStyle = {
+    const buttonsStyle = {
         display: 'flex',
         gap: '10px',
         alignItems: 'center',
@@ -19,30 +19,35 @@ export const OnOff = (props: PropsType) => {
         height: '20px',
         border: '1px solid black',
         padding: '5px',
-        backgroundColor: on ? 'lightgreen' : 'white'
+        backgroundColor: props.value ? 'lightgreen' : 'white'
     }
     const offStyle = {
         width: '30px',
         height: '20px',
         padding: '5px',
         border: '1px solid black',
-        backgroundColor: !on ? 'red' : 'white'
+        backgroundColor: !props.value ? 'red' : 'white'
 
     }
-    const indikatorStyle = {
+    const
+        indicatorStyle = {
         width: '20px',
         height: '20px',
         borderRadius: '10px',
         border: '1px solid black',
-        backgroundColor: on ? 'lightgreen' : 'red'
+        backgroundColor: props.value ? 'lightgreen' : 'red'
     }
+
+    const onClickOn = () => props.callback(true)
+
+    const onClickOff = () => props.callback(false)
 
 
     return (
-        <div style={battonsStyle}>
-            <button style={onStyle} onClick={() => setOn(true)}>On</button>
-            <button style={offStyle} onClick={() => setOn(false)}>Off</button>
-            <button style={indikatorStyle}></button>
+        <div style={buttonsStyle}>
+            <button style={onStyle} onClick={onClickOn}>On</button>
+            <button style={offStyle} onClick={onClickOff}>Off</button>
+            <button style={indicatorStyle}></button>
         </div>
     );
 };
