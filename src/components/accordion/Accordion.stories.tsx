@@ -4,7 +4,6 @@ import { action } from '@storybook/addon-actions';
 import {Accordion} from './Accordion';
 import React, {useState} from 'react';
 
-//👇 This default export determines where your story goes in the story list
 export default  {
     component: Accordion,
 };
@@ -40,11 +39,11 @@ export const AccordionDemo = () => {
     />
 }
 
-
+//для продвинутых:
 
 //type Story = StoryObj<typeof Accordion>;
 
-//xport const FirstStory: Story = {
+//export const FirstStory: Story = {
    // args: {
       //  titleValue: 'Hello',
      //   collapsed: true,
