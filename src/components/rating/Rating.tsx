@@ -31,7 +31,7 @@ type StarPropsType = {
 
 };
 
-function Star(props: StarPropsType) {
+export const Star = (props: StarPropsType) => {
     console.log("Star rendering");
 
     const handleClick = () => props.onClick(props.value);

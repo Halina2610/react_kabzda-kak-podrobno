@@ -1,32 +1,21 @@
-import React, { useState } from "react";
+import {RatingValueType, Star} from './Rating';
+import {useState} from 'react';
 
-type RatingPropsType = {};
+type RatingPropsType = {
+    defaultValue?: RatingValueType
+    callback?: ()=> void
+};
 
 export const UncontrolledRating = (props: RatingPropsType) => {
-    const [rating, setRating] = useState(0);
+    const [rating, setRating] = useState<RatingValueType>(props.defaultValue ? props.defaultValue : 0);
 
-    const handleRatingChange = (value: number) => () => setRating(rating === value ? 0 : value);
+    const handleRatingChange = (value: RatingValueType) => () => setRating(rating === value ? 0 : value);
 
     return (
         <div>
             {[1, 2, 3, 4, 5].map((value) => (
-                <Star key={value} selected={rating >= value} onClick={handleRatingChange(value)} />
+                <Star key={value} selected={rating >= value} onClick={handleRatingChange(value as RatingValueType)} value={0}/>
             ))}
         </div>
     );
 };
-
-type StarPropsType = {
-    selected: boolean;
-    onClick: () => void;
-};
-
-function Star(props: StarPropsType) {
-    console.log("Star rendering");
-
-    return (
-        <span onClick={props.onClick}>
-      {props.selected ? "★" : "☆"}
-    </span>
-    );
-}

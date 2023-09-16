@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 type PropsType = {
     onChange: (on: boolean)=> void
+    defaultOn?: boolean
 }
 
 

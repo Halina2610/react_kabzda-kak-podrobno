@@ -9,13 +9,11 @@ export default  {
 };
 
 const onChangeHandler = action('onChange')
-export const CollapsedAccordion = () => {
+export const Default = () => {
     return <Accordion
         titleValue={'Collapsed Accordion'}
         collapsed={true}
-        onClick={() => {
-            console.log('on change')
-        }}
+        onClick={onChangeHandler}
     />
 }
 
