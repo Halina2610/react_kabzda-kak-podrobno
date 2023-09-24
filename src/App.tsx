@@ -21,7 +21,12 @@ function App() {
     const controlledCallback = () => {
         setControlledOnOff(!controlledOnOff);
     }
-
+    const items = [
+        {title: 'Dimych', value: 1},
+        {title: 'Valera', value: 1},
+        {title: 'Artem', value: 1},
+        {title: 'Victor', value: 1},
+    ]
     return (
         <AppWrapper>
             <PageTitle title={'React - Kabzda kak podrobno'}/>
@@ -31,7 +36,9 @@ function App() {
             <Accordion
                 titleValue={'Menu'}
                 collapsed={accordionCollapsed}
-                onClick={AccordionOnClickHandler}
+                onChange={AccordionOnClickHandler}
+                items={items}
+                onClick={()=> {}}
             />
             <UncontrolledOnOff onChange={controlledCallback}/> {controlledOnOff.toString()}
             <CustomCursor/>
