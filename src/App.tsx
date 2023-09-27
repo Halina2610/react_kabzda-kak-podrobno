@@ -8,6 +8,7 @@ import {UncontrolledAccordion} from './components/accordion/UncontrolledAccordio
 import CustomCursor from './components/cursor/CustomCursor';
 import {Rating, RatingValueType} from './components/rating/Rating';
 import {OnOff} from './components/onOff/OnOff';
+import {CustomSelect, Option} from "./components/customSelect/CustomSelect";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
@@ -27,11 +28,25 @@ function App() {
         {title: 'Artem', value: 1},
         {title: 'Victor', value: 1},
     ]
+
+    const options: Option[] = [
+        { label: 'none', value: 'nothing' },
+        { label: 'Minsk', value: 'minsk' },
+        { label: 'Vitebsk', value: 'vitebsk' },
+        { label: 'Polotsk', value: 'polotsk' },
+    ];
+
     return (
         <AppWrapper>
+
+
             <PageTitle title={'React - Kabzda kak podrobno'}/>
             <UncontrolledRating/>
+
+            <CustomSelect options={options} selectName={'My city'}/>
+
             <OnOff value={controlledOnOff} callback={controlledCallback}/>
+
             <UncontrolledAccordion titleValue={'User1'}/>
             <Accordion
                 titleValue={'Menu'}
@@ -43,6 +58,8 @@ function App() {
             <UncontrolledOnOff onChange={controlledCallback}/> {controlledOnOff.toString()}
             <CustomCursor/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
+
+
         </AppWrapper>
     );
 }
@@ -58,6 +75,7 @@ function PageTitle(props: PageTitlePropsType) {
 const AppWrapper = styled.div`
   width: 600px;
   margin: 0 auto;
+  
 `;
 
 export default App;
