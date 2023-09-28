@@ -9,6 +9,7 @@ import CustomCursor from './components/cursor/CustomCursor';
 import {Rating, RatingValueType} from './components/rating/Rating';
 import {OnOff} from './components/onOff/OnOff';
 import {CustomSelect, Option} from "./components/input/CustomSelect";
+import {Typewriter} from "./components/any/Typewriter";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
@@ -44,7 +45,7 @@ function App() {
 
     return (
         <AppWrapper>
-
+            <Typewriter text="Hello, World!" />
 
             <PageTitle title={'React - Kabzda kak podrobno'}/>
             <UncontrolledRating/>
