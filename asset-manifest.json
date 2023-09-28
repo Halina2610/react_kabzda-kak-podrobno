@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-kabzda-kak-podrobno/static/css/main.e6c13ad2.css",
-    "main.js": "/react-kabzda-kak-podrobno/static/js/main.0c740f5b.js",
+    "main.js": "/react-kabzda-kak-podrobno/static/js/main.6380581c.js",
     "static/js/787.41481711.chunk.js": "/react-kabzda-kak-podrobno/static/js/787.41481711.chunk.js",
     "index.html": "/react-kabzda-kak-podrobno/index.html",
     "main.e6c13ad2.css.map": "/react-kabzda-kak-podrobno/static/css/main.e6c13ad2.css.map",
-    "main.0c740f5b.js.map": "/react-kabzda-kak-podrobno/static/js/main.0c740f5b.js.map",
+    "main.6380581c.js.map": "/react-kabzda-kak-podrobno/static/js/main.6380581c.js.map",
     "787.41481711.chunk.js.map": "/react-kabzda-kak-podrobno/static/js/787.41481711.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.0c740f5b.js"
+    "static/js/main.6380581c.js"
   ]
 }
