@@ -8,12 +8,13 @@ import {UncontrolledAccordion} from './components/accordion/UncontrolledAccordio
 import CustomCursor from './components/cursor/CustomCursor';
 import {Rating, RatingValueType} from './components/rating/Rating';
 import {OnOff} from './components/onOff/OnOff';
-import {CustomSelect, Option} from "./components/customSelect/CustomSelect";
+import {CustomSelect, Option} from "./components/input/CustomSelect";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
     const [controlledOnOff, setControlledOnOff] = useState<boolean>(true)
+    const [selectedOption, setSelectedOption] = useState<Option | null>(null);
 
     const AccordionOnClickHandler = () => {
         setAccordionCollapsed(!accordionCollapsed);
@@ -36,6 +37,11 @@ function App() {
         { label: 'Polotsk', value: 'polotsk' },
     ];
 
+
+    const handleSelectChange = (option: Option | null) => {
+        setSelectedOption(option);
+    };
+
     return (
         <AppWrapper>
 
@@ -43,7 +49,7 @@ function App() {
             <PageTitle title={'React - Kabzda kak podrobno'}/>
             <UncontrolledRating/>
 
-            <CustomSelect options={options} selectName={'My city'}/>
+            <CustomSelect options={options} selectName={'My city'} onChange={handleSelectChange} value={selectedOption}/>
 
             <OnOff value={controlledOnOff} callback={controlledCallback}/>
 

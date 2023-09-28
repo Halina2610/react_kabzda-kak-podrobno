@@ -2,12 +2,13 @@ import {Input} from "./Input";
 import {Simulate} from "react-dom/test-utils";
 import input = Simulate.input;
 import React, {ChangeEvent, useRef, useState} from "react";
-import {action} from "@storybook/addon-actions";
 
 export default {
     title: 'input',
     component: Input,
 };
+
+
 
 //Контролируемые:
 
@@ -40,7 +41,7 @@ export const ControlledSelect= () => {
     const [parentValue, setParentValue] = useState<string | undefined>(undefined);
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-      setParentValue(e.currentTarget.value);
+        setParentValue(e.currentTarget.value);
     };
 
     return (

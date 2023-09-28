@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 export type Option = {
@@ -9,30 +9,41 @@ export type Option = {
 interface SelectProps {
     options: Option[];
     selectName: string;
+    value: Option | null;
+    onChange: (option: Option | null) => void;
 }
 
 export const CustomSelect = (props: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState<Option | null>(null);
     const selectRef = useRef<HTMLDivElement>(null);
-
-    const onClickHandler = (option: Option) => {
-        setSelectedOption(option);
-        setIsOpen(false);
-    };
 
     const toggleOptions = () => {
         setIsOpen(!isOpen);
     };
 
-    const handleBlur = () => {
+    const onClickHandler = (option: Option) => {
+        props.onChange(option);
         setIsOpen(false);
     };
 
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
+
     return (
         <SelectContainer ref={selectRef}>
-            <Select onClick={toggleOptions} onBlur={handleBlur}>
-                {selectedOption ? selectedOption.label : props.selectName}
+            <Select onClick={toggleOptions}>
+                {props.value ? props.value.label : props.selectName}
             </Select>
             {isOpen && (
                 <OptionsContainer>
