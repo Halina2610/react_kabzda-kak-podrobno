@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-kabzda-kak-podrobno/static/css/main.9340d837.css",
-    "main.js": "/react-kabzda-kak-podrobno/static/js/main.8296725e.js",
+    "main.css": "/react-kabzda-kak-podrobno/static/css/main.c4859cfe.css",
+    "main.js": "/react-kabzda-kak-podrobno/static/js/main.04ed1a1c.js",
     "static/js/787.41481711.chunk.js": "/react-kabzda-kak-podrobno/static/js/787.41481711.chunk.js",
     "index.html": "/react-kabzda-kak-podrobno/index.html",
-    "main.9340d837.css.map": "/react-kabzda-kak-podrobno/static/css/main.9340d837.css.map",
-    "main.8296725e.js.map": "/react-kabzda-kak-podrobno/static/js/main.8296725e.js.map",
+    "main.c4859cfe.css.map": "/react-kabzda-kak-podrobno/static/css/main.c4859cfe.css.map",
+    "main.04ed1a1c.js.map": "/react-kabzda-kak-podrobno/static/js/main.04ed1a1c.js.map",
     "787.41481711.chunk.js.map": "/react-kabzda-kak-podrobno/static/js/787.41481711.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9340d837.css",
-    "static/js/main.8296725e.js"
+    "static/css/main.c4859cfe.css",
+    "static/js/main.04ed1a1c.js"
   ]
 }
