@@ -1,0 +1,18 @@
+.select span.main {
+    border: 1px solid black;
+    display: inline-block;
+    min-height: 20px;
+    min-width: 60px;
+}
+
+.items selected{
+
+    border: 1px solid red;
+    position: absolute;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.item:hover {
+    background-color: #646464;
+}

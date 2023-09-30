@@ -10,6 +10,7 @@ import {Rating, RatingValueType} from './components/rating/Rating';
 import {OnOff} from './components/onOff/OnOff';
 import {CustomSelect, Option} from "./components/input/CustomSelect";
 import {Typewriter} from "./components/any/Typewriter";
+import {ItemType, SelectD} from "./components/input/SelectD";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
@@ -43,13 +44,23 @@ function App() {
         setSelectedOption(option);
     };
 
+    const itemses: ItemType[] = [
+        { title: 'nothing', value: '1' },
+        { title: 'Minsk', value: '2' },
+        { title: 'Vitebsk', value: '3' },
+    ]
+
+    const [active, setActive] = useState(false)
+
+    const showItems = () => setActive(!active)
+
     return (
         <AppWrapper>
             <Typewriter text="Hello, World!" />
 
             <PageTitle title={'React - Kabzda kak podrobno'}/>
             <UncontrolledRating/>
-
+            <SelectD items={itemses} onChange={showItems} value={'1'}/>
             <CustomSelect options={options} selectName={'My city'} onChange={handleSelectChange} value={selectedOption}/>
 
             <OnOff value={controlledOnOff} callback={controlledCallback}/>
