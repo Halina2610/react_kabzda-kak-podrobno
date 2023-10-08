@@ -1,0 +1,20 @@
+.SelectedD_select__RgpM7 span.SelectedD_main__cUAhR {
+    border: 1px solid black;
+    display: inline-block;
+    min-height: 20px;
+    min-width: 60px;
+}
+
+.SelectedD_items__9S6AD selected{
+
+    border: 1px solid red;
+    position: absolute;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.SelectedD_item__wY6ZF:hover {
+    background-color: #646464;
+}
+
+/*# sourceMappingURL=components-input-SelectD-stories.770fe10d.chunk.css.map*/

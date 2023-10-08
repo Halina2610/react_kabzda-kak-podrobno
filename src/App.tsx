@@ -32,12 +32,19 @@ function App() {
         {title: 'Victor', value: 1},
     ]
 
+
     const options: Option[] = [
-        { label: 'none', value: 'nothing' },
-        { label: 'Minsk', value: 'minsk' },
-        { label: 'Vitebsk', value: 'vitebsk' },
-        { label: 'Polotsk', value: 'polotsk' },
-    ];
+        { countryId: 0, label: 'none', value: 'nothing', people: 0},
+        { countryId: 1, label: "minsk", value: "Minsk", people: 1000000 },
+        { countryId: 1, label: "vitebsk", value: "Vitebsk", people: 300000 },
+        { countryId: 1, label: "polotsk", value: "Polotsk", people: 100000 },
+        { countryId: 2, label: "varshava", value: "Varshava", people: 5000000 },
+        { countryId: 2, label: "schecin", value: "Schecin", people: 800000 },
+        { countryId: 2, label: "vratslow", value: "Vratslow", people: 500000 },
+        { countryId: 3, label: "kiev", value: "Kiev", people: 100000000 },
+        { countryId: 3, label: "odessa", value: "Odessa", people: 2000000 },
+        { countryId: 3, label: "chernigow", value: "Chernigow", people: 1000000 }
+    ]
 
 
     const handleSelectChange = (option: Option | null) => {

@@ -1,9 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 
 export type Option = {
+    countryId: number;
     label: string;
     value: string;
+    people: number;
 };
 
 interface SelectProps {
@@ -40,16 +42,25 @@ export const CustomSelect = (props: SelectProps) => {
         };
     }, []);
 
+    const options = useMemo(() => {
+        return props.options.map((option) => ({
+            countryId: option.countryId,
+            label: option.label,
+            value: option.value,
+            people: option.people,
+        }));
+    }, [props.options]);
+
     return (
         <SelectContainer ref={selectRef}>
             <Select onClick={toggleOptions}>
-                {props.value ? props.value.label : props.selectName}
+                {props.value ? props.value.value : props.selectName}
             </Select>
             {isOpen && (
                 <OptionsContainer>
-                    {props.options.map((option) => (
+                    {options.map((option) => (
                         <OptionItem key={option.value} onClick={() => onClickHandler(option)}>
-                            {option.label}
+                            {option.value}
                         </OptionItem>
                     ))}
                 </OptionsContainer>
