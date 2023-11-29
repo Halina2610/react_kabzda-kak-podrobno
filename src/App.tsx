@@ -1,16 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import './App.css';
-import {Accordion} from './components/accordion/Accordion';
-import {UncontrolledRating} from './components/rating/UncontrolledRating';
-import {UncontrolledOnOff} from './components/onOff/UncontrolledOnOff';
-import {UncontrolledAccordion} from './components/accordion/UncontrolledAccordion';
-import CustomCursor from './components/cursor/CustomCursor';
-import {Rating, RatingValueType} from './components/rating/Rating';
-import {OnOff} from './components/onOff/OnOff';
-import {CustomSelect, Option} from "./components/input/CustomSelect";
-import {Typewriter} from "./components/any/Typewriter";
-import {ItemType, SelectD} from "./components/input/SelectD";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
