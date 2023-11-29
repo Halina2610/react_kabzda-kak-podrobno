@@ -11,6 +11,7 @@ import {OnOff} from './components/onOff/OnOff';
 import {CustomSelect, Option} from "./components/input/CustomSelect";
 import {Typewriter} from "./components/any/Typewriter";
 import {ItemType, SelectD} from "./components/input/SelectD";
+import {UseEffectClock} from "./components/useEffect/UseEffectClock";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
@@ -33,18 +34,17 @@ function App() {
     ]
 
 
-
     const options: Option[] = [
-        { countryId: 0, label: 'none', value: 'nothing', people: 0},
-        { countryId: 1, label: "minsk", value: "Minsk", people: 1000000 },
-        { countryId: 1, label: "vitebsk", value: "Vitebsk", people: 300000 },
-        { countryId: 1, label: "polotsk", value: "Polotsk", people: 100000 },
-        { countryId: 2, label: "varshava", value: "Varshava", people: 5000000 },
-        { countryId: 2, label: "schecin", value: "Schecin", people: 800000 },
-        { countryId: 2, label: "vratslow", value: "Vratslow", people: 500000 },
-        { countryId: 3, label: "kiev", value: "Kiev", people: 100000000 },
-        { countryId: 3, label: "odessa", value: "Odessa", people: 2000000 },
-        { countryId: 3, label: "chernigow", value: "Chernigow", people: 1000000 }
+        {countryId: 0, label: 'none', value: 'nothing', people: 0},
+        {countryId: 1, label: "minsk", value: "Minsk", people: 1000000},
+        {countryId: 1, label: "vitebsk", value: "Vitebsk", people: 300000},
+        {countryId: 1, label: "polotsk", value: "Polotsk", people: 100000},
+        {countryId: 2, label: "varshava", value: "Varshava", people: 5000000},
+        {countryId: 2, label: "schecin", value: "Schecin", people: 800000},
+        {countryId: 2, label: "vratslow", value: "Vratslow", people: 500000},
+        {countryId: 3, label: "kiev", value: "Kiev", people: 100000000},
+        {countryId: 3, label: "odessa", value: "Odessa", people: 2000000},
+        {countryId: 3, label: "chernigow", value: "Chernigow", people: 1000000}
     ]
 
 
@@ -53,9 +53,9 @@ function App() {
     };
 
     const itemses: ItemType[] = [
-        { title: 'nothing', value: '1' },
-        { title: 'Minsk', value: '2' },
-        { title: 'Vitebsk', value: '3' },
+        {title: 'nothing', value: '1'},
+        {title: 'Minsk', value: '2'},
+        {title: 'Vitebsk', value: '3'},
     ]
 
     const [active, setActive] = useState(false)
@@ -64,12 +64,13 @@ function App() {
 
     return (
         <AppWrapper>
-            <Typewriter text="Hello, World!" />
-
+            <Typewriter text="Hello, World!"/>
+            <UseEffectClock/>
             <PageTitle title={'React - Kabzda kak podrobno'}/>
             <UncontrolledRating/>
             <SelectD items={itemses} onChange={showItems} value={'1'}/>
-            <CustomSelect options={options} selectName={'My city'} onChange={handleSelectChange} value={selectedOption}/>
+            <CustomSelect options={options} selectName={'My city'} onChange={handleSelectChange}
+                          value={selectedOption}/>
 
             <OnOff value={controlledOnOff} callback={controlledCallback}/>
 
@@ -79,7 +80,8 @@ function App() {
                 collapsed={accordionCollapsed}
                 onChange={AccordionOnClickHandler}
                 items={items}
-                onClick={()=> {}}
+                onClick={() => {
+                }}
             />
             <UncontrolledOnOff onChange={controlledCallback}/> {controlledOnOff.toString()}
             <CustomCursor/>
@@ -101,7 +103,7 @@ function PageTitle(props: PageTitlePropsType) {
 const AppWrapper = styled.div`
   width: 600px;
   margin: 0 auto;
-  
+
 `;
 
 export default App;
