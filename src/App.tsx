@@ -66,8 +66,8 @@ function App() {
             <Typewriter text="Hello, World!" />
 
             <PageTitle title={'React - Kabzda kak podrobno'}/>
-            <SelectD items={itemses} onChange={showItems} value={'1'}/>
             <UncontrolledRating/>
+            <SelectD items={itemses} onChange={showItems} value={'1'}/>
             <CustomSelect options={options} selectName={'My city'} onChange={handleSelectChange} value={selectedOption}/>
 
             <OnOff value={controlledOnOff} callback={controlledCallback}/>
