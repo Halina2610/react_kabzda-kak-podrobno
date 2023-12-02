@@ -1,7 +1,7 @@
-import React, {useState, useMemo} from "react";
+import React, {useState} from "react";
 
 export default {
-    title: 'useState expert demo'
+    title: 'useState pro demo'
 };
 
 function factorial(n: number): number {
