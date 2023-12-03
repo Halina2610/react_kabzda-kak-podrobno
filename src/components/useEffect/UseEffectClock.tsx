@@ -4,19 +4,18 @@ import styled from "styled-components";
 export const UseEffectClock = () => {
     const [time, setTime] = useState('');
 
+    const formatNumber = (num: number) => num < 10 ? '0' + num : num
+
     useEffect(() => {
         const updateTime = () => {
             const currentTime = new Date();
-            const seconds = () => {
-                if (currentTime.getSeconds() <= 9) return '0' + currentTime.getSeconds();
-                return currentTime.getSeconds();
-            };
-            const minutes = () => {
-                if (currentTime.getMinutes() <= 9) return '0' + currentTime.getMinutes();
-                return currentTime.getMinutes();
-            };
+
+            const seconds = formatNumber(currentTime.getSeconds());
+            const minutes = formatNumber(currentTime.getMinutes());
+            const hours = formatNumber(currentTime.getHours())
+
             const formattedTime =
-                `${currentTime.getHours()}:${minutes()}:${seconds()}`;
+                `${hours}:${minutes}:${seconds}`;
             setTime(formattedTime);
         };
 
@@ -31,11 +30,11 @@ export const UseEffectClock = () => {
 
 };
 
+
 const TimeWrapper = styled.div`
   padding: 20px;
-  margin: 10px 0;
-  border: 2px solid saddlebrown;
-  width: 50px;
+  border: 2px solid #ff0099;
+  width: 60px;
 `;
 
 
